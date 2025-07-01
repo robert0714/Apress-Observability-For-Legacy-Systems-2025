@@ -1,1 +1,0 @@
-export { SessionInstrumentation } from './instrumentation';

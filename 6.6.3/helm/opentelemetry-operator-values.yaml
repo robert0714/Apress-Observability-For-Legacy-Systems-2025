@@ -1,8 +1,0 @@
-admissionWebhooks:
-  create: false
-
-manager:
-  serviceMonitor:
-    enabled: true
-  env:
-    ENABLE_WEBHOOKS: "false"

@@ -1,3 +1,0 @@
-artifactId=cloud-stream-processor
-groupId=com.solace.samples.spring.scs
-version=0.0.3-SNAPSHOT
