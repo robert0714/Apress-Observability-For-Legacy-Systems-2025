@@ -4,7 +4,7 @@ metadata:
   annotations:
     kompose.cmd: kompose convert -f docker-compose.yml
     kompose.version: 1.26.1 (a9d05d509)
-    namespace: monitoring
+  namespace: monitoring
   creationTimestamp: null
   labels:
     io.kompose.service: grafana
@@ -41,16 +41,16 @@ spec:
           resources: {}
           volumeMounts:
             - mountPath: /etc/grafana/provisioning/datasources
-              name: grafana-claim0
+              name: grafana-datasources
             - mountPath: /etc/grafana/provisioning/dashboards
               name: grafana-claim1
             - mountPath: /etc/grafana/dashboards
               name: grafana-claim2
       restartPolicy: Always
       volumes:
-        - name: grafana-claim0
-          persistentVolumeClaim:
-            claimName: grafana-claim0
+        - name: grafana-datasources
+          configMap:
+            name: grafana-datasources
         - name: grafana-claim1
           persistentVolumeClaim:
             claimName: grafana-claim1

@@ -4,11 +4,11 @@ metadata:
   annotations:
     kompose.cmd: kompose convert -f docker-compose.yml
     kompose.version: 1.26.1 (a9d05d509)
-    namespace: monitoring
   creationTimestamp: null
   labels:
     io.kompose.service: prometheus
   name: prometheus
+  namespace: monitoring
 spec:
   replicas: 1
   selector:
@@ -41,9 +41,14 @@ spec:
           resources: {}
           volumeMounts:
             - mountPath: /etc/prometheus/
+              name: prometheus-config-volume
+            - mountPath: /prometheus
               name: prometheus-claim0
       restartPolicy: Always
       volumes:
+        - name: prometheus-config-volume
+          configMap:
+            name: prometheus-config
         - name: prometheus-claim0
           persistentVolumeClaim:
             claimName: prometheus-claim0
