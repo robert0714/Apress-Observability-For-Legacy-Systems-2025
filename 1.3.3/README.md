@@ -35,5 +35,7 @@ helm install demo pyroscope-io/pyroscope -f values.yaml
 
 # References:
 * [Profiling in Python with Pyroscope's Pip Package](https://grafana.com/blog/2021/10/14/profiling-in-python-with-pyroscopes-pip-package/)
+  * https://github.com/grafana/pyroscope/tree/main/examples/language-sdk-instrumentation/python
 * https://pkg.go.dev/github.com/pyroscope-io/hotrod-golang
+  * https://github.com/jaegertracing/jaeger/tree/main/examples/hotrod
 * [What you’re missing without profiling: An Introduction to Pyroscope](https://itnext.io/what-youre-missing-without-profiling-an-introduction-to-pyroscope-eb45a4ec2608)
